@@ -9,10 +9,7 @@ from typing_extensions import Annotated, TypedDict
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from prompt import contextualize_q_prompt, qa_prompt
 from langchain_openai import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains.history_aware_retriever import create_history_aware_retriever
-from langchain_core.chat_history import BaseChatMessageHistory
-from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain.chains.retrieval import create_retrieval_chain
 
 from store import vector_store

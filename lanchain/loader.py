@@ -1,5 +1,4 @@
 from langchain_google_cloud_sql_pg import PostgresLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 import uuid
 import asyncio
 
