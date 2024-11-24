@@ -8,7 +8,11 @@ from config import settings
 
 load_dotenv()
 
-embeddings = OpenAIEmbeddings(api_key=settings.OPENAI_API_LANGCHAIN_KEY, model="text-embedding-3-small",dimensions=768)
+embeddings = OpenAIEmbeddings(
+    api_key=settings.OPENAI_API_LANGCHAIN_KEY,
+    model=settings.embedding_model,
+    dimensions=settings.dimensions,
+)
 
 vector_store = PostgresVectorStore.create_sync(
     engine=engine,

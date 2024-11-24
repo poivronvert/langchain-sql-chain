@@ -11,4 +11,4 @@ engine = PostgresEngine.from_instance(
 )
 
 if __name__ == "__main__":
-    engine.init_vectorstore_table(table_name=settings.vector_table, vector_size=768)
+    engine.init_vectorstore_table(table_name=settings.vector_table, vector_size=settings.dimensions)
