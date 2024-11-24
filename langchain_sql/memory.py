@@ -12,8 +12,8 @@ from langchain_openai import ChatOpenAI
 from langchain.chains.history_aware_retriever import create_history_aware_retriever
 from langchain.chains.retrieval import create_retrieval_chain
 
-from store import vector_store
-from config import settings
+from vector_data_store import vector_store
+from database_config import settings
 
 def create_rag_chain():
     llm = ChatOpenAI(model=settings.llm_model, api_key=settings.OPENAI_API_LANGCHAIN_KEY)

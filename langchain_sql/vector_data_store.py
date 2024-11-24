@@ -4,7 +4,7 @@ from langchain_google_cloud_sql_pg import PostgresVectorStore
 from dotenv import load_dotenv
 
 from connection import engine
-from config import settings
+from database_config import settings
 
 load_dotenv()
 

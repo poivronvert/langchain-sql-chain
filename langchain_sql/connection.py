@@ -1,5 +1,5 @@
 from langchain_google_cloud_sql_pg import PostgresEngine
-from config import settings
+from database_config import settings
 
 engine = PostgresEngine.from_instance(
     project_id=settings.DATABASE_PROJECT_ID,
