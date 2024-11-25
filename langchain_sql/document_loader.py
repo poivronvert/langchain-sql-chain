@@ -3,11 +3,11 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 import uuid
 import asyncio
 
-from vector_data_store import vector_store
-from connection import engine
-from database_config import settings
+from .vector_data_store import vector_store
+from .connection import engine
+from .config import settings
 
-table_name = settings.table_name
+table_name = settings.TABLE_NAME
 
 async def load_documents():
     """
@@ -24,6 +24,3 @@ async def load_documents():
 
     ids = [str(uuid.uuid4()) for i in range(len(docs_to_load))]
     vector_store.add_documents(docs_to_load, ids)
-
-if __name__ == "__main__":
-    asyncio.run(load_documents())

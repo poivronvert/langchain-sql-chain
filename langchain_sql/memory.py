@@ -7,16 +7,16 @@ from langgraph.graph import START, StateGraph
 from langgraph.graph.message import add_messages
 from typing_extensions import Annotated, TypedDict
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from prompt import contextualize_q_prompt, qa_prompt
 from langchain_openai import ChatOpenAI
 from langchain.chains.history_aware_retriever import create_history_aware_retriever
 from langchain.chains.retrieval import create_retrieval_chain
 
-from vector_data_store import vector_store
-from database_config import settings
+from langchain_sql.prompt import contextualize_q_prompt, qa_prompt
+from langchain_sql.vector_data_store import vector_store
+from langchain_sql.config import settings
 
 def create_rag_chain():
-    llm = ChatOpenAI(model=settings.llm_model, api_key=settings.OPENAI_API_LANGCHAIN_KEY)
+    llm = ChatOpenAI(model=settings.LLM_MODEL, api_key=settings.OPENAI_API_LANGCHAIN_KEY)
     retriever = vector_store.as_retriever()
     history_aware_retriever = create_history_aware_retriever(llm, retriever, contextualize_q_prompt)
     question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)

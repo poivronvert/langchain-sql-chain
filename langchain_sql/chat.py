@@ -1,5 +1,5 @@
 import sys
-from memory import app
+from langchain_sql.memory import app
 
 human_inputs = []
 thread_id = "abc123"
@@ -15,5 +15,6 @@ def append_and_create_chat():
         sys.exit(0)
     create_chat(thread_id, new_input)
 
-while True:
-    append_and_create_chat()
+def start_chat():
+    while True:
+        append_and_create_chat()

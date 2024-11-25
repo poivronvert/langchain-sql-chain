@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "langchainsql-chat",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "langchain_sql/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "chat"
+            ]
+        }
+    ]
+}

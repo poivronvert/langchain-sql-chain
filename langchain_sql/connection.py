@@ -1,5 +1,5 @@
 from langchain_google_cloud_sql_pg import PostgresEngine
-from database_config import settings
+from .config import settings
 
 engine = PostgresEngine.from_instance(
     project_id=settings.DATABASE_PROJECT_ID,
@@ -10,5 +10,5 @@ engine = PostgresEngine.from_instance(
     password=settings.DATABASE_PASSWORD
 )
 
-if __name__ == "__main__":
-    engine.init_vectorstore_table(table_name=settings.vector_table, vector_size=settings.dimensions)
+def init_vectorstore_table():
+    engine.init_vectorstore_table(table_name=settings.VECTOR_TABLE, vector_size=settings.DIMENSIONS)
